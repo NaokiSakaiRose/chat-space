@@ -1,0 +1,100 @@
+.Chat-main{
+  width: calc(100vw - 300px);
+    &__group-info{
+      height: 100px;
+      background-color: $white;
+      border-bottom-style: solid;
+      border-bottom-color: $line_white-dark;
+        .group-info{
+          float: left;
+          margin-left: 40px;
+            &__name{
+              color: $text-grey-2;
+              font-size: 20px;
+              margin: 35px 0px 15px 0px ;
+            }
+            &__member{
+              color: $text-grey-1;
+              font-size: 12px;
+            }
+        }
+        .group-button{
+          float: right;
+          margin: 28px 40px 0px 0px;
+            .edit-button{
+              display: block;
+              margin: 0px 20px;
+              height: 40px;
+              width: 72px;
+              color: $button-blue;
+              font-size: 16px;
+              text-decoration: none;
+              line-height: 40px;
+              text-align: center;
+              border: 1px solid $button-blue;
+            }
+        }
+    }
+    &__message-list{
+      height: calc(100vh - 228px);
+      background-color: $grey-lite;
+      padding: 35px 0px 0px 40px;
+        .message-list{
+          .message-info{
+            margin-bottom: 12px;
+              &__name{
+                color: $text-grey-2;
+                font-size: 16px;
+              }
+              &__date{
+                color: $text-grey-3;
+                font-size: 12px;
+                margin-bottom: 46px;
+              }
+          }
+          .message{
+            margin-bottom: 46px;
+              &__content{
+                color: $text-grey-1;
+                font-size: 14px;
+              }
+          }
+        }
+    }
+    &__message-form{
+      .message-form{
+        background-color: $grey-dark;
+        height: 90px;
+        padding: 0px 40px;
+        display: flex;
+        align-items: center;
+          &__message {
+            padding-left: 10px;
+            border: none;
+            height: 50px;
+            width: calc(100% - 160px);
+          }
+          &__icon {
+            height: 50px;
+            padding-right: 10px;
+            background-color: $white;
+              &__content {
+                font-size: 20px;
+                line-height: 50px;
+              }
+              .hidden {
+                display: none;
+              }
+          }
+          &__submit {
+            background-color: $button-blue;
+            height: 50px;
+            width: 100px;
+            float: right;
+            font-size: 16px;
+            margin-left: 15px;
+            color: $white;
+          }
+        }
+    }
+}
