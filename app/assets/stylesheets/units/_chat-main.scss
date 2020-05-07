@@ -35,12 +35,13 @@
             }
         }
     }
-    &__message-list{
+    &__comment-list{
+      overflow: scroll;
       height: calc(100vh - 228px);
       background-color: $grey-lite;
       padding: 35px 0px 0px 40px;
-        .message-list{
-          .message-info{
+        .comment-list{
+          .comment-info{
             margin-bottom: 12px;
               &__name{
                 color: $text-grey-2;
@@ -52,7 +53,7 @@
                 margin-bottom: 46px;
               }
           }
-          .message{
+          .comment{
             margin-bottom: 46px;
               &__content{
                 color: $text-grey-1;
@@ -61,40 +62,40 @@
           }
         }
     }
-    &__message-form{
-      .message-form{
-        background-color: $grey-dark;
-        height: 90px;
-        padding: 0px 40px;
-        display: flex;
-        align-items: center;
-          &__message {
-            padding-left: 10px;
-            border: none;
-            height: 50px;
-            width: calc(100% - 160px);
-          }
-          &__icon {
-            height: 50px;
-            padding-right: 10px;
-            background-color: $white;
-              &__content {
-                font-size: 20px;
-                line-height: 50px;
-              }
-              .hidden {
-                display: none;
-              }
-          }
-          &__submit {
-            background-color: $button-blue;
-            height: 50px;
-            width: 100px;
-            float: right;
-            font-size: 16px;
-            margin-left: 15px;
-            color: $white;
-          }
+}
+
+.comment-form{
+  background-color: $grey-dark;
+  height: 90px;
+  padding: 0px 40px;
+  display: flex;
+  align-items: center;
+    &__comment {
+      padding-left: 10px;
+      border: none;
+      height: 50px;
+      width: calc(100% - 160px);
+    }
+    &__icon {
+      height: 50px;
+      padding-right: 10px;
+      background-color: $white;
+        &__content {
+          font-size: 20px;
+          line-height: 50px;
+        }
+        .hidden {
+          display: none;
         }
     }
-}
+    &__submit {
+      background-color: $button-blue;
+      height: 50px;
+      width: 100px;
+      float: right;
+      font-size: 16px;
+      margin-left: 15px;
+      color: $white;
+    }
+  }
+

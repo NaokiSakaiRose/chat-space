@@ -1,0 +1,25 @@
+.Chat-main
+
+  .Chat-main__group-info
+    .group-info
+      .group-info__name
+        = @group.name
+      .group-info__member
+        %a Member
+        - @group.users.each do |user|
+          = user.username
+    .group-button
+      %a= link_to "Edit", edit_group_path(@group), class: 'edit-button'
+
+  .Chat-main__comment-list
+    = render @comments
+
+  .form
+    = form_for [@group, @comment] do |f|
+      .comment-form
+        = f.text_field :comment, class: 'comment-form__comment', placeholder: 'type a comment'
+        .comment-form__icon
+          = f.label :image, class: 'comment-form__icon__content' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'comment-form__submit'
