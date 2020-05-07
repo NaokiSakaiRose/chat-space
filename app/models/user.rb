@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :group_users
   has_many :groups, through: :group_users
+  has_many :contents
 
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
