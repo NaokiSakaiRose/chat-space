@@ -6,6 +6,6 @@
       = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
   .comment
     - if comment.comment.present?
-      %p.comment-info__content
+      %p.comment__info
         = comment.comment
     = image_tag comment.image.url, class: 'lower-comment__image' if comment.image.present?
