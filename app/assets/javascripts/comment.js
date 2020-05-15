@@ -1,11 +1,12 @@
 $(function(){
+
   function buildHTML(comment){
     if ( comment.image ) {
       var html =
-        `<div class="comment-list">
+        `<div class="comment-list" data-comment-id = ${comment.id}>
           <div class="comment-info">
             <div class="comment-info__name">
-              ${comment.user_name}
+              ${comment.user_username}
             </div>
             <div class="comment-info__date">
               ${comment.created_at}
@@ -21,10 +22,10 @@ $(function(){
       return html;
     } else {
       var html =
-        `<div class="comment-list">
+        `<div class="comment-list" data-comment-id = ${comment.id}>
           <div class="comment-info">
             <div class="comment-info__name">
-              ${comment.user_name}
+              ${comment.user_username}
             </div>
             <div class="comment-info__date">
               ${comment.created_at}
@@ -66,4 +67,41 @@ $(function(){
     })
   });
 
+  var reloadComments = function() {
+    //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+    var last_comment_id = $('.comment-list:last').data("comment-id");
+
+    $.ajax({
+      //ルーティングで設定した通り/groups/id番号/api/commentsとなるよう文字列を書く
+      url: "api/comments",
+      //ルーティングで設定した通りhttpメソッドをgetに指定
+      type: 'GET',
+      dataType: 'json',
+      //dataオプションでリクエストに値を含める
+      data: {id: last_comment_id}
+    })
+    .done(function(comments) {
+      if (comments.length !== 0) {
+        //追加するHTMLの入れ物を作る
+        var html = '';
+        //配列commentsの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
+        $.each(comments, function(i, comment) {
+          html += buildHTML(comment)
+        
+        //メッセージが入ったHTMLに、入れ物ごと追加
+        $('.Chat-main__comment-list').append(html);
+        $('.Chat-main__comment-list').animate({ scrollTop: $('.Chat-main__comment-list')[0].scrollHeight});
+        });
+      }
+    })
+    .fail(function() {
+      alert('error');
+    });
+    
+  }
+
+  if (document.location.href.match(/\/groups\/\d+\/comments/)) {
+    setInterval(reloadComments, 7000);
+  }
+  
 });

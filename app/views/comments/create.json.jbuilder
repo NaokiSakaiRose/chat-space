@@ -1,4 +1,6 @@
-json.user_name @comment.user.username
+json.comment    @comment.comment
+json.image      @comment.image.url
 json.created_at @comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
-json.comment @comment.comment
-json.image @comment.image_url
+json.user_username @comment.user.username
+#idもデータとして渡す
+json.id @comment.id
