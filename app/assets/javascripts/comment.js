@@ -5,12 +5,12 @@ $(function(){
       var html =
         `<div class="comment-list" data-comment-id = ${comment.id}>
           <div class="comment-info">
-            <div class="comment-info__name">
+            <a class="comment-info__name">
               ${comment.user_username}
-            </div>
-            <div class="comment-info__date">
+            </a>
+            <a class="comment-info__date">
               ${comment.created_at}
-            </div>
+            </a>
           </div>
           <div class="comment">
             <p class="comment__info">
@@ -24,12 +24,12 @@ $(function(){
       var html =
         `<div class="comment-list" data-comment-id = ${comment.id}>
           <div class="comment-info">
-            <div class="comment-info__name">
+            <a class="comment-info__name">
               ${comment.user_username}
-            </div>
-            <div class="comment-info__date">
+            </a>
+            <a class="comment-info__date">
               ${comment.created_at}
-            </div>
+            </a>
           </div>
           <div class="comment">
             <p class="comment__info">

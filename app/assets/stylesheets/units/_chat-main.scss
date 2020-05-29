@@ -14,7 +14,7 @@
               margin: 35px 0px 15px 0px ;
             }
             &__member{
-              color: $text-grey-1;
+              color: $text-grey-3;
               font-size: 12px;
             }
         }
@@ -75,18 +75,19 @@
       border: none;
       height: 50px;
       width: calc(100% - 160px);
-    }
-    &__icon {
-      height: 50px;
-      padding-right: 10px;
-      background-color: $white;
-        &__content {
-          font-size: 20px;
-          line-height: 50px;
-        }
-        .hidden {
-          display: none;
-        }
+      &__icon {
+        position: relative;
+        right: 30px;
+        height: 18px;
+        background-color: $white;
+          &__content {
+            font-size: 20px;
+            line-height: 18px;
+          }
+          .hidden {
+            display: none;
+          }
+      }
     }
     &__submit {
       background-color: $button-blue;
@@ -94,7 +95,6 @@
       width: 100px;
       float: right;
       font-size: 16px;
-      margin-left: 15px;
       color: $white;
     }
   }

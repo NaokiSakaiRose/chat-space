@@ -18,8 +18,8 @@
     = form_for [@group, @comment] do |f|
       .comment-form
         = f.text_field :comment, class: 'comment-form__comment', placeholder: 'type a comment'
-        .comment-form__icon
-          = f.label :image, class: 'comment-form__icon__content' do
+        .comment-form__comment__icon
+          = f.label :image, class: 'comment-form__comment__icon__content' do
             = icon('fas', 'image', class: 'icon')
             = f.file_field :image, class: 'hidden'
         = f.submit 'Send', class: 'comment-form__submit'
